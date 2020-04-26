@@ -1,11 +1,13 @@
 package br.com.alura.forum.controller.DTO;
 
 import br.com.alura.forum.modelo.Topico;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Getter
 public class TopicoDTO {
 
     private Long id;
@@ -18,22 +20,6 @@ public class TopicoDTO {
         this.titulo = topico.getTitulo();
         this.mensagem = topico.getMensagem();
         this.dataCriacao = topico.getDataCriacao();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public String getMensagem() {
-        return mensagem;
-    }
-
-    public LocalDateTime getDataCriacao() {
-        return dataCriacao;
     }
 
     public static List<TopicoDTO> converter(List<Topico> topicos) {
